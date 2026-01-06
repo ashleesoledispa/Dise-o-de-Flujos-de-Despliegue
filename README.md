@@ -1,60 +1,53 @@
-# Diseño-de-Flujos-de-Despliegue
-🚀 CI Spring Boot con GitHub Actions
-📌 Descripción del proyecto
+# 🚀 CI Spring Boot con GitHub Actions
 
-Este repositorio contiene un proyecto Spring Boot configurado con un proceso de Integración Continua (CI) utilizando GitHub Actions, cuyo objetivo es automatizar la compilación, ejecución de pruebas y construcción de una imagen Docker en cada cambio realizado sobre la rama principal (main).
+## 📌 Descripción del proyecto
+Este repositorio contiene un proyecto **Spring Boot** configurado con un **proceso de Integración Continua (CI)** utilizando **GitHub Actions**, cuyo objetivo es automatizar la compilación, ejecución de pruebas y construcción de una imagen Docker en cada cambio realizado sobre la rama principal (`main`).
 
-El proyecto fue desarrollado como práctica para reforzar los conocimientos adquiridos en CI/CD, aplicando herramientas utilizadas en entornos reales de desarrollo de software.
+El proyecto fue desarrollado como práctica para **reforzar los conocimientos adquiridos en CI/CD**, aplicando herramientas utilizadas en entornos reales de desarrollo de software.
 
-🎯 Objetivo
+---
 
-Implementar un proceso de CI (Continuous Integration) que permita:
+## 🎯 Objetivo
+Implementar un proceso de **CI (Continuous Integration)** que permita:
 
-Compilar el proyecto automáticamente.
+- Compilar el proyecto automáticamente.
+- Ejecutar pruebas unitarias e integración.
+- Construir una imagen Docker lista para despliegue.
+- Ejecutarse de forma automática en cada `push` a la rama `main`.
 
-Ejecutar pruebas unitarias e integración.
+---
 
-Construir una imagen Docker lista para despliegue.
+## 🛠️ Tecnologías utilizadas
+- **Java 17**
+- **Spring Boot**
+- **Maven**
+- **GitHub Actions**
+- **Docker**
+- **H2 Database**
 
-Ejecutarse de forma automática en cada push a la rama main.
+---
 
-🛠️ Tecnologías utilizadas
-
-Java 17
-
-Spring Boot
-
-Maven
-
-GitHub Actions
-
-Docker
-
-H2 Database
-
-⚙️ Proceso de Integración Continua (CI)
-
+## ⚙️ Proceso de Integración Continua (CI)
 El pipeline de CI está definido en el archivo:
+
 
 .github/workflows/ci.yml
 
 
-Este workflow se ejecuta automáticamente en cada push a la rama main y realiza los siguientes pasos:
+Este workflow se ejecuta **automáticamente en cada push a la rama `main`** y realiza los siguientes pasos:
 
-Checkout del código fuente desde el repositorio.
+1. Checkout del código fuente desde el repositorio.
+2. Configuración del entorno **Java 17**.
+3. Asignación de permisos de ejecución a **Maven Wrapper (`mvnw`)**.
+4. Compilación del proyecto y ejecución de pruebas mediante **Maven**.
+5. Construcción de una imagen **Docker** lista para despliegue.
 
-Configuración del entorno Java 17.
+---
 
-Asignación de permisos de ejecución a Maven Wrapper (mvnw).
-
-Compilación del proyecto y ejecución de pruebas mediante Maven.
-
-Construcción de una imagen Docker lista para despliegue.
-
-🧪 Build y pruebas
-
+## 🧪 Build y pruebas
 El pipeline ejecuta el siguiente comando:
 
+```bash
 ./mvnw clean verify
 
 
